@@ -2,9 +2,17 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Screen, Restaurant, CartItem, MenuItem } from './types';
 import { fetchMenuByRestaurantId, MOCK_MENU } from './services/menuService';
-import qzawayLogo from './assets/images/qzaway_logo_transparent_1777101270418.png';
+import qzawayLogo from './assets/images/logo2.png';
 
 // --- Components ---
+
+const Logo = ({ className = "" }: { className?: string }) => {
+  return (
+    <div className={`relative flex items-center justify-center ${className}`}>
+      <img src={qzawayLogo} alt="QzAway Logo" className="w-full h-full object-contain" />
+    </div>
+  );
+};
 
 const TopAppBar = ({ 
   title, 
@@ -34,9 +42,7 @@ const TopAppBar = ({
         </button>
       )}
       {!onBack && (
-        <div className="w-10 h-10 flex items-center justify-center">
-          <img src={qzawayLogo} alt="QzAway Logo" className="w-full h-full object-contain" />
-        </div>
+        <Logo className="w-10 h-10" />
       )}
       <span className="text-2xl font-black text-on-surface italic tracking-tight font-headline">
         {title || 'QzAway'}
@@ -94,7 +100,7 @@ const BottomNavBar = ({
             onClick={() => onNavigate(tab.id as Screen, 0)}
             className={`flex flex-col items-center justify-center p-2 transition-all duration-200 ${
               isActive 
-                ? 'bg-gradient-to-br from-primary to-primary-container text-white rounded-full p-3 mb-2 scale-110 -translate-y-2 shadow-lg' 
+                ? 'bg-gradient-to-br from-secondary to-primary text-white rounded-full p-3 mb-2 scale-110 -translate-y-2 shadow-lg' 
                 : 'text-on-surface-variant hover:text-primary active:scale-90'
             }`}
           >
@@ -138,9 +144,7 @@ const MallSelection = ({ onConfirm }: { onConfirm: () => void }) => (
       <section className="w-full bg-white/95 backdrop-blur-2xl rounded-[2.5rem] p-8 shadow-[0_32px_64px_rgba(0,0,0,0.25)] flex flex-col items-center text-center">
         <div className="relative mb-6">
           <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
-          <div className="relative w-32 h-32 flex items-center justify-center drop-shadow-2xl">
-            <img src={qzawayLogo} alt="QzAway" className="w-full h-full object-contain" />
-          </div>
+          <Logo className="w-32 h-32" />
         </div>
 
         <div className="space-y-3 mb-8">
@@ -267,7 +271,7 @@ const RestaurantDirectory = ({ onSelect }: { onSelect: (r: Restaurant) => void }
               }}
               className={`px-5 py-2 rounded-full font-medium flex items-center gap-2 whitespace-nowrap active:scale-95 transition-all ${
                 !isPureVeg && !isOpenNow && searchQuery === '' 
-                ? 'bg-gradient-to-br from-primary to-primary-container text-white shadow-md' 
+                ? 'bg-gradient-to-br from-secondary to-primary text-white shadow-md' 
                 : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'
               }`}
             >
