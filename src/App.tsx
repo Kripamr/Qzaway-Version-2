@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Screen, Restaurant, CartItem, MenuItem } from './types';
 import { fetchMenuByRestaurantId, MOCK_MENU } from './services/menuService';
-import qzawayLogo from './assets/images/logo2.png';
+import qzawayLogo from './assets/images/logo2.jpeg';
 
 // --- Components ---
 
