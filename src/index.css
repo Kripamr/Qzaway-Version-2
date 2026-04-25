@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #F97316;
+  --color-primary-container: #FFE4D6;
+  --color-secondary: #22C55E;
+  --color-secondary-container: #DCFCE7;
+  --color-on-primary: #ffffff;
+  --color-surface: #fcf9f7;
+  --color-on-surface: #1b1c1b;
+  --color-on-surface-variant: #655d56;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f1;
+  --color-surface-container: #eae8e6;
+  --color-surface-container-high: #ebe7e5;
+  --color-surface-container-highest: #e5e1df;
+  --color-outline: #afadac;
+  --color-outline-variant: #e4beb1;
+  --color-tertiary: #FACC15;
+  --color-tertiary-container: #FEF9C3;
+  --color-brand-accent: #22C55E;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body antialiased;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
